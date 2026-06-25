@@ -131,7 +131,7 @@ function FlipCard({ service, index }: { service: Service; index: number }) {
   const faceClass =
     "absolute inset-0 flex flex-col overflow-hidden rounded-[20px] border border-[#eef1f5] shadow-[0_4px_24px_rgba(15,23,42,0.06)] [backface-visibility:hidden]";
 
-  const backFaceClass = `${faceClass} bg-white p-6`;
+  const backFaceClass = `${faceClass} bg-white p-4 sm:p-5`;
 
   return (
     <motion.div
@@ -140,7 +140,7 @@ function FlipCard({ service, index }: { service: Service; index: number }) {
       whileInView="visible"
       viewport={{ once: true, margin: "-40px" }}
       variants={fadeUp}
-      className="group h-[300px] cursor-pointer [perspective:1000px] sm:h-[320px]"
+      className="group h-[260px] cursor-pointer [perspective:1000px] sm:h-[270px] md:h-[250px] lg:h-[245px] xl:h-[255px]"
       onClick={handleClick}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
@@ -167,8 +167,8 @@ function FlipCard({ service, index }: { service: Service; index: number }) {
             className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/50 to-black/30"
             aria-hidden
           />
-          <div className="relative z-10 flex h-full flex-col justify-end p-6 text-left">
-            <h3 className="text-xl font-semibold leading-snug text-white sm:text-2xl">
+          <div className="relative z-10 flex h-full flex-col justify-end p-4 text-left sm:p-5">
+            <h3 className="text-lg font-semibold leading-snug text-white sm:text-xl">
               {service.title}
             </h3>
           </div>
@@ -178,11 +178,11 @@ function FlipCard({ service, index }: { service: Service; index: number }) {
         <div
           className={`${backFaceClass} [transform:rotateY(180deg)] justify-between`}
         >
-          <p className="text-[13px] leading-relaxed text-[#64748b] sm:text-sm sm:leading-6">
+          <p className="text-xs leading-relaxed text-[#64748b] sm:text-[13px] sm:leading-5">
             {service.description}
           </p>
 
-          <div className="mt-4 flex flex-col gap-3">
+          <div className="mt-3 flex flex-col gap-2.5">
             <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-[#ecfdf5] px-3 py-1.5 text-[11px] font-semibold text-[#059669] sm:text-xs">
               <BadgeIcon type={service.badgeIcon} />
               {service.badge}
@@ -207,7 +207,7 @@ function FlipCard({ service, index }: { service: Service; index: number }) {
 
 export function ServicesSection() {
   return (
-    <section id="services" className="bg-[#f8fafc] py-14 sm:py-16 lg:py-20">
+    <section id="services" className="bg-[#f8fafc] py-10 sm:py-12 lg:py-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           custom={0}
@@ -220,12 +220,12 @@ export function ServicesSection() {
           <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#2563eb]">
             What We Offer
           </p>
-          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-[#111827] sm:text-3xl lg:text-4xl">
+          <h2 className="mt-1.5 text-2xl font-extrabold tracking-tight text-[#111827] sm:text-3xl lg:text-[2rem] lg:leading-tight">
             Our Services
           </h2>
         </motion.div>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-12 md:grid-cols-2 xl:grid-cols-3 xl:gap-6">
+        <div className="mt-7 grid grid-cols-1 gap-4 sm:mt-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
           {services.map((service, index) => (
             <FlipCard key={service.title} service={service} index={index} />
           ))}

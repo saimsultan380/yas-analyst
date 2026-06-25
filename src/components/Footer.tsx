@@ -1,13 +1,12 @@
 import Link from "next/link";
+import { BrandLogo } from "./BrandLogo";
 import {
   InstagramIcon,
-  LogoIcon,
+  MailIcon,
   TelegramIcon,
   YouTubeIcon,
 } from "./icons";
-
-const INSTAGRAM_URL = "https://www.instagram.com/yas_analyst/";
-const YOUTUBE_URL = "https://www.youtube.com/@Yasanalyst";
+import { CONTACT_EMAIL, INSTAGRAM_URL, YOUTUBE_URL } from "@/lib/site";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -31,11 +30,8 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         {/* Main row */}
         <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-          <Link href="/" className="inline-flex shrink-0 items-center gap-2">
-            <LogoIcon className="h-8 w-8" />
-            <span className="text-sm font-bold tracking-[0.1em] text-[#111827]">
-              YAS ANALYST
-            </span>
+          <Link href="/" className="inline-flex shrink-0 items-center">
+            <BrandLogo className="h-10 w-auto" />
           </Link>
 
           <nav className="flex flex-wrap items-center gap-x-5 gap-y-2">
@@ -51,6 +47,14 @@ export function Footer() {
           </nav>
 
           <div className="flex flex-wrap items-center gap-3">
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-[#6b7280] transition-colors hover:text-[#2563eb]"
+            >
+              <MailIcon className="h-4 w-4 shrink-0" />
+              {CONTACT_EMAIL}
+            </a>
+
             <span className="rounded-full border border-[#dbeafe] bg-[#eff6ff] px-3 py-1 text-xs font-semibold text-[#2563eb]">
               Ref: BFJ87
             </span>
@@ -84,6 +88,16 @@ export function Footer() {
                 );
               })}
             </div>
+
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#f43f5e] to-[#ec4899] px-4 py-2 text-xs font-semibold text-white transition-opacity hover:opacity-90"
+            >
+              <InstagramIcon className="h-3.5 w-3.5" />
+              Contact
+            </a>
 
             <Link
               href="#join-signals"

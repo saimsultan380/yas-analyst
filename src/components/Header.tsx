@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { ArrowCircleIcon, CloseIcon, LogoIcon, MenuIcon } from "./icons";
+import { BrandLogo } from "./BrandLogo";
+import { ArrowCircleIcon, CloseIcon, MenuIcon } from "./icons";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -17,11 +18,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border-light/70 bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-5 sm:h-[72px] sm:px-8 lg:px-10 xl:px-12">
-        <Link href="/" className="flex shrink-0 items-center gap-2.5">
-          <LogoIcon className="h-9 w-9 sm:h-10 sm:w-10" />
-          <span className="text-sm font-bold tracking-[0.12em] text-foreground sm:text-[15px]">
-            YAS ANALYST
-          </span>
+        <Link href="/" className="flex shrink-0 items-center">
+          <BrandLogo className="h-11 w-auto sm:h-12" priority />
         </Link>
 
         <nav className="hidden items-center gap-9 lg:flex xl:gap-10">

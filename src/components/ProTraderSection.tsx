@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "motion/react";
-import { GraduationCapIcon } from "./icons";
+import { GraduationCapIcon, InstagramIcon } from "./icons";
+import { CONTACT_EMAIL, INSTAGRAM_URL } from "@/lib/site";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -201,15 +201,24 @@ export function ProTraderSection() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUp}
-              className="mt-8 flex w-full sm:w-auto"
+              className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row"
             >
-              <Link
-                href="#"
+              <a
+                href={`mailto:${CONTACT_EMAIL}?subject=Pro%20Trader%20Program%20Enrollment`}
                 className="inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-[#2563eb] px-8 py-4 text-[15px] font-semibold text-white shadow-[0_10px_28px_rgba(37,99,235,0.32)] transition-all hover:-translate-y-0.5 hover:bg-[#1d4ed8] hover:shadow-[0_14px_32px_rgba(37,99,235,0.38)] sm:w-auto"
               >
                 <GraduationCapIcon className="h-5 w-5" />
                 Enroll in Course
-              </Link>
+              </a>
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full items-center justify-center gap-2.5 rounded-full border-2 border-[#2563eb]/25 bg-white px-8 py-4 text-[15px] font-semibold text-[#111827] shadow-[0_4px_16px_rgba(15,23,42,0.06)] transition-all hover:-translate-y-0.5 hover:border-[#2563eb]/45 hover:shadow-[0_8px_24px_rgba(37,99,235,0.12)] sm:w-auto"
+              >
+                <InstagramIcon className="h-5 w-5 text-[#2563eb]" />
+                Contact
+              </a>
             </motion.div>
           </div>
         </div>

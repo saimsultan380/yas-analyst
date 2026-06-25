@@ -32,7 +32,7 @@ export function CheckCircleIcon({ className }: { className?: string }) {
       <path
         d="M6 10.2L8.6 12.8L14.2 7.4"
         stroke="white"
-        strokeWidth="1.8"
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -187,6 +187,35 @@ export function ArrowCircleIcon({ className }: { className?: string }) {
       <path
         d="M11 8l4 4-4 4M8 12h7"
         stroke="white"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function MailIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden
+    >
+      <rect
+        x="3"
+        y="5"
+        width="18"
+        height="14"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="1.75"
+      />
+      <path
+        d="M3 7l9 6 9-6"
+        stroke="currentColor"
         strokeWidth="1.75"
         strokeLinecap="round"
         strokeLinejoin="round"

@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
+import { BrandLogo } from "./BrandLogo";
 import {
   GraduationCapIcon,
   InstagramIcon,
-  LogoIcon,
+  MailIcon,
   TelegramIcon,
 } from "./icons";
-
-const INSTAGRAM_URL = "https://www.instagram.com/yas_analyst/";
+import { CONTACT_EMAIL, INSTAGRAM_URL } from "@/lib/site";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -46,7 +46,7 @@ export function CtaSection() {
 
           <div className="relative mx-auto max-w-3xl text-center">
             <div className="mb-5 flex justify-center">
-              <LogoIcon className="h-12 w-12 sm:h-14 sm:w-14" />
+              <BrandLogo className="h-14 w-auto sm:h-16" />
             </div>
 
             <h2 className="text-2xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-3xl lg:text-4xl">
@@ -81,16 +81,24 @@ export function CtaSection() {
                 Enroll in Course
               </Link>
 
-              <Link
+              <a
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#f43f5e] to-[#ec4899] px-6 py-4 text-[15px] font-semibold text-white shadow-[0_10px_28px_rgba(244,63,94,0.28)] transition-all hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(244,63,94,0.35)] sm:w-auto sm:min-w-[200px]"
               >
                 <InstagramIcon className="h-5 w-5" />
-                Contact Us
-              </Link>
+                Contact
+              </a>
             </div>
+
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="mt-6 inline-flex items-center justify-center gap-2 text-sm font-medium text-[#4b5563] transition-colors hover:text-[#2563eb] sm:text-[15px]"
+            >
+              <MailIcon className="h-4 w-4 shrink-0" />
+              {CONTACT_EMAIL}
+            </a>
           </div>
         </motion.div>
       </div>

@@ -120,16 +120,16 @@ const trustBadges = [
 
 export function ProblemSection() {
   return (
-    <section id="the-problem" className="bg-[#f8fafc] py-14 sm:py-16 lg:py-20">
+    <section id="the-problem" className="bg-[#f8fafc] py-8 sm:py-10 lg:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-3xl border border-[#e8ecf2] bg-white shadow-[0_12px_48px_rgba(15,23,42,0.08)] lg:grid lg:grid-cols-2">
+        <div className="overflow-hidden rounded-3xl border border-[#e8ecf2] bg-white shadow-[0_12px_48px_rgba(15,23,42,0.08)] lg:grid lg:grid-cols-2 lg:items-stretch">
           {/* Left — The Problem */}
           <motion.div
             initial={{ opacity: 0, x: -28 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] as const }}
-            className="relative overflow-hidden border-b border-[#f0f0f0] bg-gradient-to-br from-[#fff8f8] via-white to-[#fff5f5] px-7 py-10 sm:px-10 sm:py-12 lg:border-b-0 lg:border-r"
+            className="relative flex h-full flex-col overflow-hidden border-b border-[#f0f0f0] bg-gradient-to-br from-[#fff8f8] via-white to-[#fff5f5] px-5 py-6 sm:px-7 sm:py-7 lg:border-b-0 lg:border-r lg:px-7 lg:py-6"
           >
             <div
               className="pointer-events-none absolute -left-16 top-0 h-56 w-56 rounded-full bg-red-100/40 blur-3xl"
@@ -142,7 +142,7 @@ export function ProblemSection() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUp}
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3.5 py-1.5"
+              className="mb-3 inline-flex w-fit items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3 py-1"
             >
               <span className="flex h-4 w-4 items-center justify-center rounded-full bg-red-500">
                 <svg viewBox="0 0 12 12" className="h-2.5 w-2.5 fill-white" aria-hidden>
@@ -160,7 +160,7 @@ export function ProblemSection() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUp}
-              className="text-2xl font-extrabold leading-[1.18] tracking-tight text-[#111827] sm:text-3xl lg:text-[2.1rem]"
+              className="text-xl font-extrabold leading-[1.2] tracking-tight text-[#111827] sm:text-2xl lg:text-[1.65rem]"
             >
               Let&apos;s Be Real&hellip; Trading{" "}
               <span className="text-red-500">Feels Like a Gamble</span> for Most
@@ -173,7 +173,7 @@ export function ProblemSection() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUp}
-              className="mt-4 text-sm leading-7 text-[#6b7280] sm:text-[15px]"
+              className="mt-2 text-xs leading-6 text-[#6b7280] sm:text-sm sm:leading-6 lg:line-clamp-2"
             >
               Most traders fail not because the market is unbeatable — but
               because they trade without a proven system, proper risk
@@ -183,7 +183,7 @@ export function ProblemSection() {
               </span>
             </motion.p>
 
-            <div className="mt-8 flex flex-col gap-3">
+            <div className="mt-4 grid grid-cols-1 gap-2.5 lg:mt-4">
               {problems.map((p, i) => (
                 <motion.div
                   key={p.text}
@@ -192,9 +192,9 @@ export function ProblemSection() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeUp}
-                  className="flex items-center gap-4 rounded-2xl border border-red-100/80 bg-white px-4 py-3.5 shadow-[0_4px_18px_rgba(239,68,68,0.06)] transition-shadow hover:shadow-[0_6px_24px_rgba(239,68,68,0.1)]"
+                  className="flex items-center gap-3 rounded-xl border border-red-100/80 bg-white px-3.5 py-3 shadow-[0_4px_18px_rgba(239,68,68,0.06)] transition-shadow hover:shadow-[0_6px_24px_rgba(239,68,68,0.1)] sm:gap-4 sm:px-4"
                 >
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-red-50">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-50 sm:h-9 sm:w-9">
                     <svg
                       viewBox="0 0 16 16"
                       className="h-4 w-4 fill-red-500"
@@ -204,17 +204,17 @@ export function ProblemSection() {
                     </svg>
                   </span>
 
-                  <p className="flex-1 text-[13px] font-medium leading-snug text-[#374151] sm:text-sm">
+                  <p className="min-w-0 flex-1 text-xs font-medium leading-snug text-[#374151] sm:text-[13px] sm:leading-5">
                     {p.text}
                   </p>
 
-                  <div className="hidden h-12 w-[72px] shrink-0 overflow-hidden rounded-xl border border-[#f0f0f0] bg-[#fafafa] sm:block">
+                  <div className="relative h-14 w-[4.5rem] shrink-0 overflow-hidden rounded-lg border border-[#f0f0f0] bg-[#fafafa] sm:h-16 sm:w-24 lg:h-[4.5rem] lg:w-28">
                     <Image
                       src={p.img}
                       alt={p.imgAlt}
-                      width={72}
-                      height={48}
-                      className="h-full w-full object-cover"
+                      width={112}
+                      height={72}
+                      className="h-full w-full object-contain p-1"
                     />
                   </div>
                 </motion.div>
@@ -228,7 +228,7 @@ export function ProblemSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] as const }}
-            className="relative flex flex-col justify-between overflow-hidden bg-gradient-to-br from-[#f8fbff] via-white to-[#f0fdf9] px-7 py-10 sm:px-10 sm:py-12"
+            className="relative flex h-full min-h-full flex-col overflow-hidden bg-gradient-to-br from-[#f8fbff] via-white to-[#f0fdf9] px-5 py-6 sm:px-7 sm:py-7 lg:px-7 lg:py-6"
           >
             <div
               className="pointer-events-none absolute right-0 top-0 h-64 w-64 translate-x-1/4 -translate-y-1/4 rounded-full bg-emerald-100/50 blur-3xl"
@@ -239,14 +239,14 @@ export function ProblemSection() {
               aria-hidden
             />
 
-            <div className="relative">
+            <div className="relative flex min-h-0 flex-1 flex-col">
               <motion.div
                 custom={0.1}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1.5"
+                className="mb-3 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1"
               >
                 <CheckCircleIcon className="h-4 w-4" />
                 <span className="text-xs font-bold uppercase tracking-widest text-[#059669]">
@@ -260,14 +260,14 @@ export function ProblemSection() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="mb-5 flex items-center gap-3"
+                className="mb-3 flex items-center gap-2.5"
               >
-                <LogoIcon className="h-10 w-10" />
+                <LogoIcon className="h-8 w-8" />
                 <div>
-                  <p className="text-xl font-black tracking-widest text-[#111827]">
+                  <p className="text-base font-black tracking-widest text-[#111827]">
                     YAS ANALYST
                   </p>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6b7280]">
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#6b7280]">
                     Clarity. Confidence. Consistency.
                   </p>
                 </div>
@@ -279,7 +279,7 @@ export function ProblemSection() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="text-2xl font-extrabold tracking-tight text-[#111827] sm:text-3xl"
+                className="text-xl font-extrabold tracking-tight text-[#111827] sm:text-2xl lg:text-[1.5rem]"
               >
                 Sound familiar?
               </motion.h3>
@@ -290,7 +290,7 @@ export function ProblemSection() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="mt-3 text-sm leading-7 text-[#4b5563] sm:text-[15px]"
+                className="mt-2 text-xs leading-6 text-[#4b5563] sm:text-sm sm:leading-6"
               >
                 That is exactly why{" "}
                 <span className="font-bold text-[#2563eb]">Yas Analyst</span> was
@@ -307,20 +307,20 @@ export function ProblemSection() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="mt-7 flex flex-col gap-3"
+                className="mt-4 flex flex-1 flex-col justify-center gap-2.5 sm:mt-5 sm:gap-3 lg:py-2"
               >
                 <Link
                   href="#join-signals"
-                  className="group flex items-center gap-3.5 rounded-xl bg-[#2563eb] px-5 py-4 text-white shadow-[0_8px_28px_rgba(37,99,235,0.28)] transition-all hover:-translate-y-0.5 hover:bg-[#1d4ed8] hover:shadow-[0_12px_32px_rgba(37,99,235,0.35)]"
+                  className="group flex items-center gap-3 rounded-xl bg-[#2563eb] px-4 py-3.5 text-white shadow-[0_8px_28px_rgba(37,99,235,0.28)] transition-all hover:-translate-y-0.5 hover:bg-[#1d4ed8] hover:shadow-[0_12px_32px_rgba(37,99,235,0.35)] sm:px-5 sm:py-4"
                 >
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/15">
-                    <TelegramIcon className="h-5 w-5" />
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/15">
+                    <TelegramIcon className="h-4 w-4" />
                   </span>
-                  <div className="flex flex-col items-start">
-                    <span className="text-[15px] font-bold leading-tight">
+                  <div className="flex min-w-0 flex-col items-start">
+                    <span className="text-sm font-bold leading-tight">
                       Join Free Signal Group
                     </span>
-                    <span className="text-xs font-medium text-white/70">
+                    <span className="text-[11px] font-medium text-white/70">
                       Get Daily High-Probability Signals
                     </span>
                   </div>
@@ -328,16 +328,16 @@ export function ProblemSection() {
 
                 <Link
                   href="#course"
-                  className="group flex items-center gap-3.5 rounded-xl border-2 border-[#2563eb]/20 bg-white px-5 py-4 text-[#111827] shadow-[0_4px_16px_rgba(15,23,42,0.06)] transition-all hover:-translate-y-0.5 hover:border-[#2563eb]/40 hover:shadow-[0_8px_24px_rgba(37,99,235,0.12)]"
+                  className="group flex items-center gap-3 rounded-xl border-2 border-[#2563eb]/20 bg-white px-4 py-3.5 text-[#111827] shadow-[0_4px_16px_rgba(15,23,42,0.06)] transition-all hover:-translate-y-0.5 hover:border-[#2563eb]/40 hover:shadow-[0_8px_24px_rgba(37,99,235,0.12)] sm:px-5 sm:py-4"
                 >
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#eff6ff]">
-                    <GraduationCapIcon className="h-5 w-5 text-[#2563eb]" />
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#eff6ff]">
+                    <GraduationCapIcon className="h-4 w-4 text-[#2563eb]" />
                   </span>
-                  <div className="flex flex-col items-start">
-                    <span className="text-[15px] font-bold leading-tight text-[#111827]">
+                  <div className="flex min-w-0 flex-col items-start">
+                    <span className="text-sm font-bold leading-tight text-[#111827]">
                       Enroll in Course
                     </span>
-                    <span className="text-xs font-medium text-[#6b7280]">
+                    <span className="text-[11px] font-medium text-[#6b7280]">
                       Learn the System. Trade with Confidence.
                     </span>
                   </div>
@@ -351,20 +351,20 @@ export function ProblemSection() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUp}
-              className="relative mt-8 grid grid-cols-2 gap-3 border-t border-[#e8ecf2] pt-6 sm:grid-cols-4"
+              className="relative mt-5 grid shrink-0 grid-cols-2 gap-2 border-t border-[#e8ecf2] pt-4 sm:mt-6 sm:grid-cols-4 sm:gap-2.5 sm:pt-5"
             >
               {trustBadges.map((badge) => (
                 <div
                   key={badge.title}
-                  className="flex flex-col items-center gap-1.5 rounded-xl bg-white/70 px-2 py-3 text-center"
+                  className="flex flex-col items-center gap-1 rounded-lg bg-white/70 px-1.5 py-2.5 text-center sm:py-3"
                 >
-                  <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-[#eceef2] bg-white shadow-sm">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-[#eceef2] bg-white shadow-sm sm:h-8 sm:w-8">
                     {badge.icon}
                   </span>
-                  <p className="text-[12px] font-bold text-[#111827]">
+                  <p className="text-[10px] font-bold leading-tight text-[#111827] sm:text-[11px]">
                     {badge.title}
                   </p>
-                  <p className="text-[11px] text-[#9ca3af]">{badge.sub}</p>
+                  <p className="hidden text-[10px] text-[#9ca3af] sm:block">{badge.sub}</p>
                 </div>
               ))}
             </motion.div>
