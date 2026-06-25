@@ -143,10 +143,10 @@ export function ProTraderSection() {
             >
               <span className="text-sm font-medium text-[#6b7280]">Fee:</span>
               <span className="text-2xl font-extrabold text-[#111827] sm:text-3xl">
-                5,000
+                5K
               </span>
               <span className="text-sm font-semibold text-[#2563eb]">
-                PKR Only
+                $
               </span>
             </motion.div>
 
