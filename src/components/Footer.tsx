@@ -9,11 +9,9 @@ import {
 import { CONTACT_EMAIL, INSTAGRAM_URL, YOUTUBE_URL } from "@/lib/site";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Course", href: "#course" },
-  { label: "Markets", href: "#markets" },
-  { label: "Community", href: "#community" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Trading Course", href: "/course" },
 ];
 
 const socialLinks = [

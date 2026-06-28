@@ -6,10 +6,10 @@ import { BrandLogo } from "./BrandLogo";
 import { ArrowCircleIcon, CloseIcon, MenuIcon } from "./icons";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Course", href: "#course" },
-  { label: "Results", href: "#results" },
-  { label: "Community", href: "#community" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Trading Course", href: "/course" },
+  { label: "XM Partnership", href: "/xm-partnership" },
 ];
 
 export function Header() {
