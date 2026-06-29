@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AboutCtaSection } from "@/components/AboutCtaSection";
 import { AboutExpertiseSection } from "@/components/AboutExpertiseSection";
 import { AboutHero } from "@/components/AboutHero";
+import { AboutPageHero } from "@/components/AboutPageHero";
 import { AboutMedicalAdvantageSection } from "@/components/AboutMedicalAdvantageSection";
 import { AboutMissionSection } from "@/components/AboutMissionSection";
 import { AboutProfileSection } from "@/components/AboutProfileSection";
@@ -21,6 +22,7 @@ export default function AboutPage() {
     <div className="flex min-h-dvh flex-col bg-white">
       <Header />
       <main className="flex-1">
+        <AboutPageHero />
         <AboutHero />
         <AboutProfileSection />
         <AboutStorySection />

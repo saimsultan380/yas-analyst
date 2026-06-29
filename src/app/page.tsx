@@ -7,6 +7,7 @@ import { Hero } from "@/components/Hero";
 import { MarketsSection } from "@/components/MarketsSection";
 import { ProblemSection } from "@/components/ProblemSection";
 import { ProTraderSection } from "@/components/ProTraderSection";
+import { ProvenResultsSection } from "@/components/ProvenResultsSection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { WhyTrustUsSection } from "@/components/WhyTrustUsSection";
 import { YouTubeSection } from "@/components/YouTubeSection";
@@ -21,6 +22,7 @@ export default function Home() {
         <ServicesSection />
         <ProblemSection />
         <ProTraderSection />
+        <ProvenResultsSection />
         <YouTubeSection />
         <WhyTrustUsSection />
         <MarketsSection />

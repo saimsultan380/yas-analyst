@@ -17,7 +17,7 @@ const fadeUp = {
 
 export function AboutHero() {
   return (
-    <section className="relative overflow-hidden bg-white py-12 sm:py-16 lg:py-20">
+    <section className="relative overflow-hidden border-t border-border-light bg-[#f8fafc] py-14 sm:py-16 lg:py-20">
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
         <div className="absolute -right-24 top-[-10%] h-[min(620px,70vh)] w-[min(620px,70vh)] rounded-full bg-[radial-gradient(circle,#dbeafe_0%,transparent_70%)] opacity-90 blur-2xl" />
         <div className="absolute bottom-[-12%] left-[-10%] h-[min(460px,55vh)] w-[min(460px,55vh)] rounded-full bg-[radial-gradient(circle,#d1fae5_0%,transparent_70%)] opacity-80 blur-2xl" />
@@ -26,36 +26,22 @@ export function AboutHero() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 sm:px-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 lg:px-8 xl:px-12">
         {/* Content */}
         <div className="order-2 flex min-w-0 flex-col lg:order-1">
-          <motion.p
+          <motion.h2
             custom={0}
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-blue"
+            className="mb-5 text-2xl font-bold leading-tight tracking-tight text-brand-green sm:text-3xl lg:text-[2rem]"
           >
-            About Yas Analyst
-          </motion.p>
-
-          <motion.h1
-            custom={0.08}
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            className="mt-3 text-[1.75rem] font-bold leading-[1.16] tracking-tight text-foreground sm:text-[2.2rem] lg:text-[2.5rem] lg:leading-[1.14]"
-          >
-            Best <span className="text-brand-blue">Crypto &amp; Forex</span>{" "}
-            Trader and Mentor
-            <span className="mt-2 block text-brand-green">
-              A Doctor Who Chose the Markets
-            </span>
-          </motion.h1>
+            A Doctor Who Chose the Markets
+          </motion.h2>
 
           <motion.p
             custom={0.16}
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="mt-5 max-w-2xl text-sm leading-7 text-text-muted sm:text-[15px] sm:leading-8"
+            className="max-w-2xl text-sm leading-7 text-text-muted sm:text-[15px] sm:leading-8"
           >
             Dr. Yasir Khan is a certified medical doctor with over 7.5 years of
             active trading experience across Forex, Gold, and Cryptocurrency
